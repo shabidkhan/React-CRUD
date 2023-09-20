@@ -20,7 +20,7 @@ function Home() {
       const handleEdit = (user) => {
         dispatch({type:'EDIT_USER',payload:user})
         setUserData(userData=> {
-            userData.splice(user.index, 1,user)
+            userData.splice(user.index, 1,{...userData[user.index],...user})
            return userData
        })
       };
